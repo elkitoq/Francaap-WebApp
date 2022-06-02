@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: #f6f6f6;;
+    overflow: hidden;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100vh, auto);
+}
+
+.sidebar-wrapper {
+    grid-column: 1 /2 ;
+    grid-row: auto;
+}
+
+.content-wrapper{
+    grid-column: 2/6;
+}
+

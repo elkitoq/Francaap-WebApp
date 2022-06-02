@@ -1,0 +1,28 @@
+
+.modal-content{
+    height: auto;
+    padding: 1rem;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body span{
+    padding: .5rem;
+    font-weight: 600;
+}
+
+.modal-body span span{
+    font-weight: 400;
+}
+
+.modal-body li{
+    padding: 5px;
+}
+
+.modal-footer{
+    justify-content: space-between;
+    padding: 0.5rem 0 0 0
+}

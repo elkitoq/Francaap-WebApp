@@ -1,0 +1,42 @@
+.col-sidebar{
+    box-shadow: 0px 2px 6px #00000012;
+    background-color: #ffff;
+    user-select: none;
+}
+
+.sidebar{
+    height: 70%;
+    justify-content: space-evenly;
+    background-color: #ffff;
+    
+}
+
+.logo{
+    display:flex;
+    height: 20%;
+}
+
+.logo-img{
+    height: 50px;
+    margin: auto;
+}
+
+.sidebar .row{
+    height: 60%;
+    margin-left: 10%
+}
+
+.sidebar .row .nav-item a{
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+    height: 20px;
+}
+
+.sidebar .row .nav-item a img{
+    margin-right: 20px;
+    width: 30px;
+    height: 50px;
+}
+
+

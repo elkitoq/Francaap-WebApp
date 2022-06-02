@@ -1,0 +1,14 @@
+.content-wrapper .container .row .col-12{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.content-wrapper .container .row .col-12 .calendarWrapper .modeWrapper button:nth-child(1){
+    display: none;
+}
+
+.dayText.currentDay {
+    height: 25px !important;
+}

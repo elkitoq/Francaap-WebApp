@@ -1,0 +1,56 @@
+.table-responsive{
+    height: 510px;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background-color: rgba(49, 49, 49, 0.158);
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: #11171a;
+  border-radius: 10px;
+}
+
+tr{
+  font-size: 14px;
+}
+
+#btnGroup{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#btnGroup button{
+  width: 23%;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  color:black
+}
+
+.btn-secondary:focus {
+  box-shadow: none;
+}
+
+.btn-secondary{
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.p-noWorks{
+  left: 50%;
+  position: absolute;
+  top: 40%;
+  border: none !important;
+}
+
+@media (max-width:1366px) {
+
+
+
+}

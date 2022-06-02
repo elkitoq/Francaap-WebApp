@@ -1,0 +1,20 @@
+.row-search{
+    justify-content: center;
+}
+
+.row-search .col-8 .search-group input{
+    border: 1px solid #ced4da;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 6px 0px 0px 6px; /* aca modifique algo el original 6px 0px 6px 6px */
+}
+
+.row-search .col-8 .search-group button{
+    border: 1px solid #ced4da;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 0px 6px 6px 0px; /* aca era 6px en todos los lados */
+    background-color: #3ce46629;
+}
+
+.row-search .col-8 .search-group button:hover{
+    background-color: #3ce466;
+}

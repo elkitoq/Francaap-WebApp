@@ -1,0 +1,14 @@
+.sweet-loading{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.sweet-loading h4{
+    margin-top: 50px;
+    height: 0;
+}
