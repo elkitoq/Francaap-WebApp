@@ -25,9 +25,9 @@ export const quickUpdateWorkState = async(state,id)=>{
  * @param news - []
  * @returns The return value is the result of the axios.put() call.
  */
-export const UpdateWorkState = async(state,id, news)=>{
+export const UpdateWorkState = async(id,state, news)=>{
     try {
-        let save = await axios.put('http://localhost:4000/UpdateWork',{state,id,news})
+        let save = await axios.put('http://localhost:4000/UpdateWork',{id,state,news})
         return save
     } catch (error) {
         console.log(error)

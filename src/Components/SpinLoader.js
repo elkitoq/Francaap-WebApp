@@ -10,13 +10,13 @@ const override = css`
   border-color: red;
 `;
 
-export const SpinLoader=({color})=> {
+export const SpinLoader=({color,title})=> {
   // eslint-disable-next-line no-unused-vars
   let [loading, setLoading] = useState(true);
 
   return (
     <div className="sweet-loading" style={{width:'100%'}}>
-      <h4>Por favor agregue un ID</h4>
+      <h4>{title}</h4>
       <PropagateLoader color={color} loading={loading} css={override} size={20} />
     </div>
   );

@@ -1,8 +1,14 @@
-import { SpinLoader } from "../Components/SpinLoader"
+import { Outlet } from "react-router-dom"
+import { Col } from "reactstrap"
+import { NavbarOptions } from "../Components/NavbarOptions"
+
 
 
 export const Options = () => {
     return (
-        <SpinLoader color={'rgba(17,201,183,100)'} />
+        <Col>
+            <NavbarOptions/>
+            <Outlet/>
+        </Col>
     )
 }

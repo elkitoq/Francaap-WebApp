@@ -12,3 +12,13 @@
 .dayText.currentDay {
     height: 25px !important;
 }
+
+.dailyEventTitle, .eventTitle{
+    font-size: 0.8rem;
+    color: black;
+}
+
+.dayEvent{
+    top: 20px !important;
+    height: auto !important;
+}

@@ -1,0 +1,17 @@
+.ul-navOptions{
+    width: 100%;
+    justify-content: center;
+}
+
+.ul-navOptions .options-item{
+    padding: 25px;
+    margin: 0 30px;
+}
+
+.ul-navOptions .options-item a{
+    padding:10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000;
+    background-color: rgb(211 215 219);
+}

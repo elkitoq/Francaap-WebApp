@@ -28,3 +28,52 @@ export const getWorkById = async(id)=>{
     }
 }
 
+// get list works for calendar
+export async function getListJobs() {
+    try {
+        let {data} = await axios.get('http://localhost:4000/getWorks')
+        let jobs = []
+        data.map(work => {
+            if (work.state === '1') {
+                let workDate = {
+                    id: work.id,
+                    color: '#f9b208',
+                    from: Date(work.date),
+                    to: work.deliveryDate,
+                    title: `${work.name} // ${work.device} // En Espera`
+                }
+
+                jobs.push(workDate)
+            } else if (work.state === '2') {
+                let workDate = {
+                    id: work.id,
+                    color: 'rgb(75 203 105)',
+                    from: Date(work.date),
+                    to: work.deliveryDate,
+                    title: `${work.name} // ${work.device} // En Progreso`
+                }
+
+                jobs.push(workDate)
+            }
+            else if (work.state === '3') {
+                let workDate = {
+                    id: work.id,
+                    color: '#1ccb9e',
+                    from: Date(work.date),
+                    to: work.deliveryDate,
+                    title: `${work.name} // ${work.device} // Terminado`
+                }
+
+                jobs.push(workDate)
+            } 
+            return null
+        })
+
+        return jobs
+    }
+    catch (error) {
+        console.log('error: ', error)
+    }
+}
+
+

@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 export const TableHead = () => {
     let styleHead = {
         padding: "0",

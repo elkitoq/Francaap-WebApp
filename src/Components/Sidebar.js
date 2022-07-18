@@ -39,7 +39,7 @@ export const Sidebar = () => {
                             alt="" />Calendario</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to="/Options" style={url.pathname==='/Options'? {fontSize:'18px', fontWeight:'500',marginLeft:'20px',transition: 'margin-left 1s'}:{marginLeft:'0px', transition:'margin-left 1s'}}><img src={url.pathname === '/Options' ? OptionActive : OptionUnactive}
+                        <Link to="/Options" style={url.pathname.includes('Options') ? {fontSize:'18px', fontWeight:'500',marginLeft:'20px',transition: 'margin-left 1s'}:{marginLeft:'0px', transition:'margin-left 1s'}}><img src={url.pathname.includes('Options') ? OptionActive : OptionUnactive}
                             alt="" />Opciones</Link>
                     </NavItem>
                 </Row>

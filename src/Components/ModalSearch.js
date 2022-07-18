@@ -1,39 +1,38 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { getWorkById } from '../Helpers/getWorks';
+//import { getWorkById } from '../Helpers/getWorks';
 import { AddNews } from './AddNews';
 import '../assets/css/modal.css'
 import { SelectStateModal } from './SelectStateModal';
 import { SpinLoader } from './SpinLoader';
+import { UpdateWorkState } from '../Helpers/updateWork';
+import { useSearchOneWork } from '../Hooks/useSearchOneWork';
 
 export const ModalSearch = ({open, name, closeModal}) => {
-
-    const [work, setWork] = useState([])
-    const [news, setNews] = useState([])
-    const [state, setState] = useState('')
-    
+ 
     let id = name.length === 5 ? name : name.substring(1,6)
-     
-    const search = async()=>{
-        try {
-            let content = await getWorkById(id)
-            setWork(content)
-            setState(work.state)
-        } catch (error) {
-            
-        }
+    const{work,loading} = useSearchOneWork(id)
+    const [news, setNews] = useState(work.news ? work.news : [])
+    const [state, setState] = useState(work.state)
+ 
+    const update = async () => {
+        console.log('enviando peticion')
+        await UpdateWorkState(id,state,news) && closeModal(!open) 
+        console.log('peticion finalizada')
     }
 
-    useEffect(()=>{
-        search()
-    },[open])
+    useEffect(() => {
+      setNews(work.news)
+      setState(work.state)
+    }, [work])
+    
   
     return (
         <div>
             <Modal isOpen={open} toggle={()=>closeModal(!open)}>
-                {work === undefined || work === false ? 
-                <SpinLoader color={'rgba(17,201,183,100)'} /> : 
+                {!id ? <SpinLoader color={'rgba(17,201,183,100)'} title={'Por favor ingrese un ID'} /> : 
+                loading ?  <SpinLoader color={'rgba(17,201,183,100)'} title={'Buscando..'} /> :
                 <div>
                     <ModalHeader >Dueño del equipo: {work.name}</ModalHeader>
                     <ModalBody>
@@ -42,16 +41,16 @@ export const ModalSearch = ({open, name, closeModal}) => {
                         <span>Telefono: <span>{work.numberCel}</span></span>
                         <span>Equipo: <span>{work.device}</span></span>
                         <span>Problema: <span>{work.problem}</span></span>
-                        <span>Noticias: <ul>{news.length === 0 ? <span>No hay noticias agregadas</span> : news.map(element=><li key={element.index}>{element}</li>)}</ul></span>
+                        <span>Noticias: <ul>{!news ? <span>No hay noticias agregadas</span> : news.map(element=><li key={element.index}>{element}</li>)}</ul></span>
                         <AddNews setNews={setNews}/>
-                        <span> Estado: <SelectStateModal state={state} setState={setState}/></span>
+                        <span> Estado: <SelectStateModal state={work.state} setState={setState}/></span>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={()=>closeModal(!open)}>Cerrar</Button>{' '}
-                        <Button color="success" className='btn-update'>Actualizar Trabajo</Button>{' '}
+                        <Button color="success" className='btn-update' onClick={update}>Actualizar Trabajo</Button>{' '}
                     </ModalFooter>
                 </div>}
-                
+
             </Modal>
         </div>
     );

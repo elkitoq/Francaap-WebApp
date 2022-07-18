@@ -1,25 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col, Button} from 'reactstrap'
 import { TableWork } from '../Components/TableWork.js'
-import { getWorkByState } from '../Helpers/getWorks.js'
 import 'animate.css'
 import '../assets/css/workOrders.css'
 
 export const Workorders = () => {
-
-    //const [works, setWorks] = useState([])
+    
     const [state, setEstate] = useState('1')
 
     useEffect(() => {
-        // async function getWork() {
-        //     try {
-        //         let list = await getWorkByState(state)
-        //         setWorks(list)
-        //     } catch (error) {
-                
-        //     }
-        // }
-        // getWork()
 
     }, [state])
 

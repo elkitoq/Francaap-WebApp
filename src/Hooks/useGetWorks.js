@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react"
 import { getWorkByState } from "../Helpers/getWorks"
 
-
 /**
  * It's a custom hook that returns an object with two properties: works and loading. 
  * 
@@ -27,10 +26,9 @@ import { getWorkByState } from "../Helpers/getWorks"
  * @param etapa - is the state of the work, it can be "Pendiente", "En Proceso", "Finalizado"
  * @returns The state object.
  */
-export const useGetWorks = (etapa) => {
+export const useGetWorks = (etapa, update) => {
     const [state, setState] = useState({
-        works:[],
-        loading: true
+        works:[]
     })
 
   useEffect(()=>{
@@ -40,7 +38,7 @@ export const useGetWorks = (etapa) => {
                 loading: false
             })
         })
-    }, [etapa])
+    }, [etapa,update])
 
     return state;
 }
