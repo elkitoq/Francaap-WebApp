@@ -4,8 +4,6 @@ import { useState } from 'react'
 import lupa from '../assets/icons/icon-search.png'
 import '../assets/css/searchbar.css'
 import { ModalSearch } from './ModalSearch'
-import { Login } from './Login'
-
 
 export const Navbar = () => {
 
@@ -35,9 +33,6 @@ export const Navbar = () => {
                     </form>
                 </InputGroup>
                 {openModal && <ModalSearch open={openModal} name={search} closeModal={handleModal}/>}
-            </Col>
-            <Col xs="2">
-                <Login/>
             </Col>
         </Row>
     )

@@ -93,13 +93,24 @@
 
 @media (max-width:1366px) {
     .content-newOrder-inner{
-        width: 100% !important;
+        width: 80% !important;
         margin-left: 0 !important;
+        min-height: 470px !important;
     }
 
     .content-newOrder-inner .form-inner-newOrder .form-newOrder .label-input textarea{
         min-height: 50px;
         max-height: 50px;
     }
+
+    .content-newOrder-inner .form-inner-newOrder .form-newOrder .label-input{
+        padding: 10px;
+    }
+
+    .content-newOrder-inner .form-inner-newOrder .form-newOrder{
+        width: 70%;
+    }
+
+
 }
 

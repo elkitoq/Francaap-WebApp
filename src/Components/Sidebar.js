@@ -38,10 +38,10 @@ export const Sidebar = () => {
                         <Link to="/Calendar" style={url.pathname==='/Calendar'? {fontSize:'18px', fontWeight:'500',marginLeft:'20px',transition: 'margin-left 1s'}:{marginLeft:'0px', transition:'margin-left 1s'}}><img src={url.pathname === '/Calendar' ? CalendarActive : CalendarUnactive}
                             alt="" />Calendario</Link>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                         <Link to="/Options" style={url.pathname.includes('Options') ? {fontSize:'18px', fontWeight:'500',marginLeft:'20px',transition: 'margin-left 1s'}:{marginLeft:'0px', transition:'margin-left 1s'}}><img src={url.pathname.includes('Options') ? OptionActive : OptionUnactive}
                             alt="" />Opciones</Link>
-                    </NavItem>
+                    </NavItem> */}
                 </Row>
             </Nav>
         </Col>
