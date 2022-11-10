@@ -23,8 +23,12 @@ export const ModalSearch = ({open, name, closeModal}) => {
     }
 
     useEffect(() => {
-      setNews(work.news)
-      setState(work.state)
+      try{
+       setNews(work.news)
+       setState(work.state)
+      }catch(error){
+       console.log(error)
+      }
     }, [work])
     
   
