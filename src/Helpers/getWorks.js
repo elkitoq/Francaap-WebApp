@@ -7,7 +7,7 @@ import axios from "axios"
  */
 export const getWorkByState = async(state)=>{
     try {
-        let {data} = await axios.post('http://localhost:4000/worksByState',{state})
+        let {data} = await axios.post('https://kito-bots.herokuapp.com/worksByState',{state})
         return data
     } catch (error) {
         console.log('No se pudo conectar con el servidor')
@@ -21,7 +21,7 @@ export const getWorkByState = async(state)=>{
  */
 export const getWorkById = async(id)=>{
     try {
-        let {data} = await axios.post('http://localhost:4000/workById',{id})
+        let {data} = await axios.post('https://kito-bots.herokuapp.com/workById',{id})
         return data
     } catch (error) {
         console.log('No se pudo conectar con el servidor')
@@ -31,7 +31,7 @@ export const getWorkById = async(id)=>{
 // get list works for calendar
 export async function getListJobs() {
     try {
-        let {data} = await axios.get('http://localhost:4000/getWorks')
+        let {data} = await axios.get('https://kito-bots.herokuapp.com/getWorks')
         let jobs = []
         data.map(work => {
             if (work.state === '1') {
